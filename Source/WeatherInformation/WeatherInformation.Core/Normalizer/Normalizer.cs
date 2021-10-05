@@ -89,19 +89,20 @@ namespace WeatherInformation.Core.Normalizer
             if (found && StringArgumentChecking.IsStringValid(rawTafString))
             {
                 string[] lines = rawTafString.Split('\n');
-                string prepared = "";
+                //string prepared = "";
+                StringBuilder prepared = new StringBuilder();
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 foreach (string line in lines)
                 {
                     // Because in TAF messages second and further lines start with tab or group of spaces. We need
                     // to mark this situation somehow in order to replace this "string" with \n\t.
-                    prepared += $"NEW_LINE_WITH_TAB {line.Trim()}";
+                    prepared.Append($"NEW_LINE_WITH_TAB {line.Trim()}");
                 }
 
-                prepared = GetCleanMetarOrTafRawString(prepared, icaoCode.Code);
+                string preparedString = GetCleanMetarOrTafRawString(prepared.ToString(), icaoCode.Code);
 
                 // Space is critical!
-                return $"TAF {prepared.Replace("NEW_LINE_WITH_TAB ", "\n\t").Trim()}";
+                return $"TAF {preparedString.Replace("NEW_LINE_WITH_TAB ", "\n\t").Trim()}";
             }
 
             return rawTafString;
