@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using StandardLibrary.ArgumentChecking;
 using StandardLibrary.DeepCopying;
 
@@ -34,8 +35,15 @@ namespace StandardLibrary.DataCache.Types
         ///     Number of seconds for cache entry to be valid (time before data in cache entry becomes
         ///     outdated).
         /// </param>
-        public DataCacheWithTimeRestriction(int secondsLimit = 60 * 3)
+        /// <exception cref="ArgumentException">If <paramref name="secondsLimit" /> is less that 0.</exception>
+        public DataCacheWithTimeRestriction([NonNegativeValue] int secondsLimit)
         {
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+            // Because of consistent logic. Check should be performed.
+            if (secondsLimit < 0)
+            {
+                throw new ArgumentException( $"{nameof(secondsLimit)} should be >= 0", nameof(secondsLimit));
+            }
             _secondsLimit = secondsLimit;
         }
 

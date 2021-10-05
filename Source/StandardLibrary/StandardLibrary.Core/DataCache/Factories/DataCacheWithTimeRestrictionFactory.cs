@@ -24,13 +24,13 @@ namespace StandardLibrary.DataCache.Factories
         /// </summary>
         /// <param name="cacheTimeLimit">Number of seconds for which cache entry is valid (is NOT outdated).</param>
         /// <exception cref="ArgumentException">If <paramref name="cacheTimeLimit" /> is less that 0.</exception>
-        public DataCacheWithTimeRestrictionFactory([NonNegativeValue] int cacheTimeLimit = 300)
+        public DataCacheWithTimeRestrictionFactory([NonNegativeValue] int cacheTimeLimit)
         {
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             // Because of consistent logic. Check should be performed.
             if (cacheTimeLimit < 0)
             {
-                throw new ArgumentException("cacheTimeLimit should be >= 0", nameof(cacheTimeLimit));
+                throw new ArgumentException( $"{nameof(cacheTimeLimit)} should be >= 0", nameof(cacheTimeLimit));
             }
 
             _cacheTimeLimit = cacheTimeLimit;
