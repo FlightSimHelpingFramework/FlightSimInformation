@@ -1,11 +1,14 @@
 ﻿// This is an open source non-commercial project. Dear PVS-Studio, please check it.
-//  PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
-// 
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+#region Usings
 
 using System;
 using JetBrains.Annotations;
 using StandardLibrary.DataCache.Types;
 using StandardLibrary.DeepCopying;
+
+#endregion
 
 namespace StandardLibrary.DataCache.Factories
 {
@@ -30,7 +33,7 @@ namespace StandardLibrary.DataCache.Factories
             // Because of consistent logic. Check should be performed.
             if (cacheTimeLimit < 0)
             {
-                throw new ArgumentException( $"{nameof(cacheTimeLimit)} should be >= 0", nameof(cacheTimeLimit));
+                throw new ArgumentException($"{nameof(cacheTimeLimit)} should be >= 0", nameof(cacheTimeLimit));
             }
 
             _cacheTimeLimit = cacheTimeLimit;

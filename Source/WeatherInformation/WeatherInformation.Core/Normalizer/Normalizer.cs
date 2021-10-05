@@ -1,12 +1,15 @@
 ﻿// This is an open source non-commercial project. Dear PVS-Studio, please check it.
-//  PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
-// 
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+#region Usings
 
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using StandardLibrary.ArgumentChecking;
 using StandardLibrary.Codes;
+
+#endregion
 
 namespace WeatherInformation.Core.Normalizer
 {

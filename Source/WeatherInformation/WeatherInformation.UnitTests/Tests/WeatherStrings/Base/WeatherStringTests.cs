@@ -1,6 +1,7 @@
 ﻿// This is an open source non-commercial project. Dear PVS-Studio, please check it.
-//  PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
-// 
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+#region Usings
 
 using FluentAssertions;
 using NUnit.Framework;
@@ -9,6 +10,8 @@ using TestingHelper.Weather.UsefulData;
 using WeatherInformation.Core.Source;
 using WeatherInformation.Core.WeatherStrings;
 using WeatherInformation.Core.WeatherStrings.Base;
+
+#endregion
 
 namespace WeatherInformation.UnitTests.Tests.WeatherStrings.Base
 {
