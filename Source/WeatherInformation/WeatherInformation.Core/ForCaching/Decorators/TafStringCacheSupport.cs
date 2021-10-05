@@ -123,7 +123,7 @@ namespace WeatherInformation.Core.ForCaching.Decorators
         /// <exception cref="ArgumentNullException">If <paramref name="icaoCodeContainer" /> is <c>null</c>.</exception>
         public async Task<TafString> DownloadTafStringAsync(IIcaoCodeContainer icaoCodeContainer)
         {
-            return (await DownloadSeveralTafStringsAsync(new[] { icaoCodeContainer })).First();
+            return (await DownloadSeveralTafStringsAsync(new[] { icaoCodeContainer }).ConfigureAwait(false)).First();
         }
 
         #endregion

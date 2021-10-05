@@ -78,7 +78,7 @@ namespace WeatherInformation.Core.ForCaching.Decorators
         /// <exception cref="ArgumentNullException">If <paramref name="icaoCodeContainer" /> is <c>null</c>.</exception>
         public async Task<MetarString> DownloadMetarStringAsync(IIcaoCodeContainer icaoCodeContainer)
         {
-            return (await DownloadSeveralMetarStringsAsync(new[] { icaoCodeContainer })).First();
+            return (await DownloadSeveralMetarStringsAsync(new[] { icaoCodeContainer }).ConfigureAwait(false)).First();
         }
 
         /// <summary>

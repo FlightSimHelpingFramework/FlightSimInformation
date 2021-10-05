@@ -82,7 +82,8 @@ namespace WeatherInformation.Core.ForCaching.Decorators
         /// <exception cref="ArgumentNullException">If <paramref name="icaoCodeContainer" /> is <c>null</c>.</exception>
         public async Task<T> DownloadInformationAsync(IIcaoCodeContainer icaoCodeContainer)
         {
-            return (await DownloadSeveralPiecesOfInformationAsync(new[] { icaoCodeContainer })).First();
+            return (await DownloadSeveralPiecesOfInformationAsync(new[] { icaoCodeContainer }).ConfigureAwait(false))
+                .First();
         }
 
         /// <summary>
