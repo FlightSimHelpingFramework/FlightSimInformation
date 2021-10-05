@@ -4,4 +4,12 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Downloader" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\StandardLibrary.Core\StandardLibrary.Core.csproj" />
+    </ItemGroup>
+
 </Project>
