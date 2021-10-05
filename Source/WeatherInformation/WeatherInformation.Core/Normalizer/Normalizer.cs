@@ -89,8 +89,8 @@ namespace WeatherInformation.Core.Normalizer
             if (found && StringArgumentChecking.IsStringValid(rawTafString))
             {
                 string[] lines = rawTafString.Split('\n');
-                //string prepared = "";
                 StringBuilder prepared = new StringBuilder();
+                
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 foreach (string line in lines)
                 {
