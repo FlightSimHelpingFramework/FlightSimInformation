@@ -90,7 +90,7 @@ namespace WeatherInformation.Core.Normalizer
             {
                 string[] lines = rawTafString.Split('\n');
                 StringBuilder prepared = new StringBuilder();
-                
+
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 foreach (string line in lines)
                 {
